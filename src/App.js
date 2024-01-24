@@ -1,8 +1,7 @@
 import React from "react";
 import './App.css';
+import Home from "./components/Home";
 
-const App = () => {
-    return <h1>Hello React</h1>;
-};
+const App = () => <Home />;
 
 export default App;

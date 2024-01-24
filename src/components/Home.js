@@ -11,19 +11,18 @@ import img7 from '../assets/img7.jpg';
 const Home = () => {
     const imagesArr = [img1, img2, img3, img4, img5, img6, img7];
     const mappedImages = imagesArr.map((img, index) =>
-    (<div className='imgHolder' key={index}><img className='img' src={img} alt='thumbnail' /></div>));
+        (<img key={img} className='img' src={img} alt='thumbnail' />));
 
     return (
         <div>
             <div>
-                <div>
-                    {mappedImages}
-                </div>
-                <div>
-                    {mappedImages}
-                </div>
-                <div>
-                    {mappedImages}
+                <div className='container'>
+                    <div className='imgHolder'>
+                        {mappedImages}
+                    </div>
+                    <div className='imgHolder'>
+                        {mappedImages}
+                    </div>
                 </div>
             </div>
             <div></div>

@@ -24,8 +24,8 @@ module.exports = {
                 },
             },
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader', 'postcss-loader'],
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg)$/i,
@@ -39,6 +39,10 @@ module.exports = {
                   },
                 ],
             },
+            // {
+            //     test: /\.(cjs)$/i,
+            //     use: ['file-loader'],
+            // }
         ],
     },
 };

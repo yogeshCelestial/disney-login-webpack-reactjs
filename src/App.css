@@ -1,15 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
-    background-color: #2d2d2b;
+    background-color: black;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.topContainer {
+    background-color: #16181f;
+    width: 70%;
+    margin: 30px auto 0;
+    border-radius: 8px;
 }
 
 @keyframes slide {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(-100%);
     }
@@ -17,16 +26,62 @@ body {
 
 .container {
     overflow: hidden;
-    padding: 40px 0;
     white-space: nowrap;
 }
 
 .imgHolder {
     display: inline-block;
+    animation: 25s slide infinite linear reverse;
+}
+
+.imgHolderRev {
+    display: inline-block;
     animation: 25s slide infinite linear;
 }
 
 .img {
-    height: 400px;
-    margin: 0 40px;
+    height: 150px;
+    margin: 0 5px;
+}
+
+.flexContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex1 {
+    width: 40%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0), #16181f);
+}
+
+.flex2 {
+    width: 60%;
+}
+
+.loginComp {
+    padding: 50px;
+}
+
+.loginText {
+    font-size: large;
+    font-weight: 800;
+}
+
+.inputsHolder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input1 {
+    width: 15%;
+    pointer-events: none;
+    cursor: none;
+}
+
+.input2 {
+    width: 80%;
+}
+
+.having {
+    margin-top: 200px;
 }

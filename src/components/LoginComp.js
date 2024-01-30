@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { styled } from '@mui/material/styles';
-import TextField from '@mui/material/TextField';
+import { TextField, Button } from '@mui/material';
 
 const CssTextField = styled(TextField)({
     '& input': {
@@ -28,15 +28,18 @@ const CssTextField = styled(TextField)({
     },
 });
 
-function LoginComp() {
-    const [mobileNo, setMobileNo] = useState('');
+function LoginComp({ mobileNo, setMobileNo, setOtpSent }) {
 
     const handleMobileNo = (e) => {
         const numberPattern = /^\d+$/;
-        if (numberPattern.test(e.target.value) || '') {
+        if ((numberPattern.test(e.target.value) && mobileNo.length < 10) || !e.target.value) {
             setMobileNo(e.target.value)
         };
     };
+
+    const getOtp = () => {
+        setOtpSent(true);
+    }
 
     return (
         <div className='loginComp'>
@@ -50,7 +53,10 @@ function LoginComp() {
                 </div>
             </div>
             <p className='by'>By proceeding you confirm that you are above 18 years and agree to the Privacy Policy & Terms of Use.</p>
-            <p className='having'>Having trouble in logging in?<a>Get Help</a></p>
+            <div className='otpBtn'>
+                <Button disabled={mobileNo.length !== 10} onClick={getOtp} variant="contained" color='primary'>GET OTP</Button>
+                <p className='having'>Having trouble in logging in?<a>Get Help</a></p>
+            </div>
         </div>
     )
 }

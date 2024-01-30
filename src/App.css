@@ -14,9 +14,27 @@ body {
     border-radius: 8px;
 }
 
-@keyframes slide {
+@keyframes slide1 {
     from {
-        transform: translateX(0);
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+@keyframes slide2 {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+@keyframes slide3 {
+    from {
+        transform: translateX(-30%);
     }
 
     to {
@@ -29,19 +47,28 @@ body {
     white-space: nowrap;
 }
 
-.imgHolder {
+.imgHolder1 {
+    white-space: nowrap;
     display: inline-block;
-    animation: 25s slide infinite linear reverse;
+    animation: 30s slide1 infinite linear;
 }
 
-.imgHolderRev {
+.imgHolder2 {
+    white-space: nowrap;
     display: inline-block;
-    animation: 25s slide infinite linear;
+    animation: 30s slide2 infinite linear;
+}
+
+.imgHolder3 {
+    white-space: nowrap;
+    display: inline-block;
+    animation: 25s slide3 infinite linear;
 }
 
 .img {
     height: 150px;
     margin: 0 5px;
+    object-fit: cover;
 }
 
 .flexContainer {
@@ -59,7 +86,7 @@ body {
 }
 
 .loginComp {
-    padding: 50px;
+    padding: 0 50px;
 }
 
 .loginText {
@@ -82,6 +109,42 @@ body {
     width: 80%;
 }
 
+.otpBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.otpBtn button {
+    margin-top: 180px;
+    width: 100%;
+}
+
 .having {
-    margin-top: 200px;
+    align-items: center;
+}
+.having a {
+    color: #1976d2;
+    font-weight: 700;
+}
+
+.otpInput {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    text-align: center;
+    font-size: 1em;
+    border: #E0E3E7;
+    background-color: #A0AAB4;
+}
+.otpInput:focus {
+    border: #6F7E8C;
+}
+
+.fillOtp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
